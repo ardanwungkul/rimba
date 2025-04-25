@@ -35,5 +35,22 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
     php artisan migrate
 
 ## Jalankan Aplikasi Laravel
-    ```bash
     php artisan serve
+
+# Penjelasan Arsitektur & Alur Kerja API
+### Arsitektur (MVC – Model, View, Controller)
+    Aplikasi dibangun dengan arsitektur **MVC** menggunakan Laravel, memisahkan logika bisnis, data, dan tampilan. Alur utamanya seperti ini:
+
+    Request (AJAX/HTTP)
+    ↓
+    Route (routes/web.php)
+    ↓ 
+    Controller (App\Http\Controllers\Api\UserController) 
+    ↓ 
+    Validasi + Proses Data
+    ↓ 
+    Model (App\Models\User) 
+    ↓ 
+    Database (MySQL) 
+    ↓ 
+    Response (JSON)
