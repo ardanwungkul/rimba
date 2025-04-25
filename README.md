@@ -43,7 +43,7 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
 
     Request (AJAX/HTTP)
     ↓
-    Route (routes/web.php)
+    Route (routes/api.php)
     ↓ 
     Controller (App\Http\Controllers\Api\UserController) 
     ↓ 
@@ -59,7 +59,7 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
 
 | Komponen        | Fungsi                                                                 |
 |-----------------|------------------------------------------------------------------------|
-| **Route**        | Mendefinisikan endpoint API (`/users`) di `routes/web.php`.            |
+| **Route**        | Mendefinisikan endpoint API (`/users`) di `routes/api.php`.            |
 | **Controller**   | Mengelola request dan response (CRUD) di `UserController.php`.         |
 | **Model**        | Mewakili data `user` di database (`User.php`).                         |
 | **Middleware**   | `log.txt` mencatat semua request ke `storage/logs/log.txt`.    |

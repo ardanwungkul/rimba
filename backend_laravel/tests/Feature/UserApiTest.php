@@ -18,7 +18,7 @@ class UserApiTest extends TestCase
             'age' => 'abc',
         ];
 
-        $response = $this->postJson('/users', $data);
+        $response = $this->postJson('api/users', $data);
 
         $response->assertStatus(422)
             ->assertJsonValidationErrors(['name', 'email', 'age']);
@@ -31,7 +31,7 @@ class UserApiTest extends TestCase
             'age'   => 22,
         ];
 
-        $response = $this->postJson('/users', $data);
+        $response = $this->postJson('api/users', $data);
 
         $response->assertStatus(201)->assertJsonFragment(['email' => 'ardan@example.com']);
         $this->assertDatabaseHas('users', ['email' => 'ardan@example.com']);
@@ -41,7 +41,7 @@ class UserApiTest extends TestCase
     {
         User::factory()->count(3)->create();
 
-        $response = $this->getJson('/users');
+        $response = $this->getJson('api/users');
 
         $response->assertStatus(200)
             ->assertJsonCount(3);
@@ -50,7 +50,7 @@ class UserApiTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->getJson("/users/{$user->id}");
+        $response = $this->getJson("api/users/{$user->id}");
 
         $response->assertStatus(200)
             ->assertJsonFragment(['email' => $user->email]);
@@ -59,7 +59,7 @@ class UserApiTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->putJson("/users/{$user->id}", [
+        $response = $this->putJson("api/users/{$user->id}", [
             'name' => 'Updated Name',
             'email' => 'updated@example.com',
             'age' => 30,
@@ -74,7 +74,7 @@ class UserApiTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->deleteJson("/users/{$user->id}");
+        $response = $this->deleteJson("api/users/{$user->id}");
 
         $response->assertStatus(200)
             ->assertJson(['message' => 'User deleted successfully']);
