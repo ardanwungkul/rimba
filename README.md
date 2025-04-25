@@ -22,9 +22,9 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=user
+    DB_DATABASE=laravel
     DB_USERNAME=root
-    DB_PASSWORD=your_password
+    DB_PASSWORD=
 
 5. **Generate Key Application**
     ```bash
@@ -34,6 +34,6 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
     ```bash
     php artisan migrate
 
-7. **Jalankan Server Laravel**
+## Jalankan Aplikasi Laravel
     ```bash
     php artisan serve
