@@ -39,7 +39,7 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
 
 # Penjelasan Arsitektur & Alur Kerja API
 ### Arsitektur (MVC – Model, View, Controller)
-    Aplikasi dibangun dengan arsitektur **MVC** menggunakan Laravel. Alur utamanya seperti ini:
+    Aplikasi dibangun dengan arsitektur MVC menggunakan Laravel. Alur utamanya seperti ini:
 
     Request (AJAX/HTTP)
     ↓
@@ -62,7 +62,7 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
 | **Route**        | Mendefinisikan endpoint API (`/users`) di `routes/web.php`.            |
 | **Controller**   | Mengelola request dan response (CRUD) di `UserController.php`.         |
 | **Model**        | Mewakili data `user` di database (`User.php`).                         |
-| **Middleware**   | `log.request` mencatat semua request ke `storage/logs/log.txt`.    |
+| **Middleware**   | `log.txt` mencatat semua request ke `storage/logs/log.txt`.    |
 | **Validator**    | Mengecek input pengguna saat create/update.                           |
 | **Log**          | Semua request dicatat otomatis sebagai file log.                       |
 | **Testing**      | `tests/Feature/UserApiTest.php` menguji fungsi dan integrasi API.         |
@@ -79,5 +79,4 @@ RESTful API sederhana untuk manajemen data User. Dibuat menggunakan **Laravel + 
 6. **Response** dikembalikan dalam bentuk JSON.
 
 ### Testing
-    ```bash
     php artisan test
